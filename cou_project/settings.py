@@ -9,26 +9,24 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# -----------------------------
+# BASE DIRECTORY
+# -----------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# -----------------------------
+# SECRET KEY & DEBUG
+# -----------------------------
+SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-+9b+0=%9^3*54khl%65^^yb)&%v^#7a#=4bc2t9=bzi=6u0mxa")
+DEBUG = os.environ.get("DEBUG", "True") == "True"
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+9b+0=%9^3*54khl%65^^yb)&%v^#7a#=4bc2t9=bzi=6u0mxa'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False # Set to False for production, True for development
-
-ALLOWED_HOSTS = ["*"]  # Allow all hosts for development, change in production
-
-
-
+# -----------------------------
+# ALLOWED HOSTS
+# -----------------------------
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
 # Application definition
 
 INSTALLED_APPS = [
@@ -107,17 +105,15 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
-
-STATIC_URL = 'static/'
-
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"  # Render will collect static files here
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
