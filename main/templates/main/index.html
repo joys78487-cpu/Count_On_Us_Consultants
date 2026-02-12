@@ -1,0 +1,933 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count On Us Consultants - Professional Tax Services Across Canada</title>
+    <meta name="description" content="Count On Us Consultants provides expert tax preparation, investing, and insurance services across Canada. E-File Certified by CRA with 6000+ tax returns prepared.">
+    <meta name="keywords" content="tax consultant, tax preparation, CRA certified, personal taxes, corporate taxes, investing, insurance, Canada">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#9C1A6D", // Magenta
+                        primaryLight: "#B3247D",
+                        primaryDark: "#7A1457",
+                        secondary: "#2D3748",
+                        accent: "#F7FAFC",
+                        success: "#38A169",
+                        dark: "#1A202C"
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif']
+                    },
+                    spacing: {
+                        '128': '32rem',
+                        '144': '36rem',
+                    },
+
+                    boxShadow: {
+                        'soft': '0 10px 25px -5px rgba(156, 26, 109, 0.1)',
+                        'hard': '0 20px 25px -5px rgba(156, 26, 109, 0.2)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #9C1A6D 0%, #B3247D 100%);
+        }
+        
+        .gradient-light {
+            background: linear-gradient(135deg, #FCE4EC 0%, #F8F9FA 100%);
+        }
+        
+        .gradient-dark {
+            background: linear-gradient(135deg, #7A1457 0%, #1A202C 100%);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 24px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, textarea:focus {
+            border-color: #9C1A6D;
+            box-shadow: 0 0 0 3px rgba(156, 26, 109, 0.2);
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(156, 26, 109, 0.2);
+        }
+
+
+
+
+
+        /* ===============================
+   GLOBAL RESPONSIVE SAFETY
+================================ */
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===============================
+   RESPONSIVE TYPOGRAPHY
+================================ */
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    line-height: 1.3;
+}
+
+p {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    line-height: 1.7;
+}
+
+/* ===============================
+   IMAGES NEVER BREAK
+================================ */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===============================
+   BUTTONS & TOUCH TARGETS
+================================ */
+
+button,
+a.btn {
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+}
+
+/* ===============================
+   RESPONSIVE GRID SYSTEM
+================================ */
+
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ===============================
+   NAVIGATION FIX (NO OVERFLOW)
+================================ */
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* ===============================
+   FADE-IN ANIMATION
+================================ */
+
+.animate-fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   TABLET-SPECIFIC FIXES
+================================ */
+
+@media (max-width: 1024px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+    </style>
+</head>
+<body class="font-roboto bg-gray-50 text-gray-800">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 shadow-md bg-white">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo and Company Name -->
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-12 h-12 gradient-primary rounded-full flex items-center justify-center">
+                        <i class="fas fa-calculator text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold font-poppins text-primary">Count On Us Consultants</h1>
+                        <p class="text-sm text-gray-600">Tax Services</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-envelope text-primary"></i>
+                        <a href="mailto:cou.consulting@gmail.com" class="hover:text-primary transition">cou.consulting@gmail.com</a>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-phone text-primary"></i>
+                        <a href="tel:5197291249" class="hover:text-primary transition">(519) 729-1249</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="mt-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <ul class="flex flex-wrap justify-center space-x-0 md:space-x-8 space-y-2 md:space-y-0">
+                        <li><a href="#home" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-pink-50 transition">Home</a></li>
+                        <li><a href="#services" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-pink-50 transition">Services</a></li>
+                        <li><a href="#about" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-pink-50 transition">About Us</a></li>
+                        <li><a href="#contact" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-pink-50 transition">Contact</a></li>
+                    </ul>
+                    
+                    <div class="mt-4 md:mt-0">
+                        <a href="#contact" class="bg-primary hover:bg-primaryDark text-white px-6 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition">Free Consultation</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="gradient-primary text-white py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 mb-12 lg:mb-0">
+                        <h2 class="text-4xl md:text-5xl font-bold font-poppins mb-6 leading-tight">Professional Tax Services You Can Count On</h2>
+                        <p class="text-xl mb-8 opacity-90">With 4+ years in business, 6000+ tax returns prepared and CRA E-File certification, we provide comprehensive tax and financial solutions across Canada.</p>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition">Get Started</a>
+                            <a href="#services" class="border-2 border-white hover:bg-white hover:text-primary px-8 py-3 rounded-full font-bold text-lg transition">Our Services</a>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2 flex justify-center">
+                        <div class="bg-white p-2 rounded-2xl shadow-hard max-w-md">
+                            <img 
+                                src="data:image/jpeg;base64,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"
+
+                                class="w-full h-auto rounded-xl"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Promo: Instagram & WhatsApp Group -->
+        <section class="py-12 bg-pink-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h3 class="text-2xl font-bold font-poppins text-gray-800 mb-4">Connect with us on Instagram & WhatsApp</h3>
+                    <p class="text-gray-600 mb-6">Follow our Instagram for tips, client stories and updates — and join our small WhatsApp group for quick announcements and community support.</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="https://www.instagram.com/cou_consulting?igsh=eHBwenNnZjVhb2R3&utm_source=qr" target="_blank" rel="noopener" class="bg-white text-primary px-6 py-3 rounded-full font-semibold shadow-md hover:shadow-lg transition inline-flex items-center gap-3">
+                            <i class="fab fa-instagram"></i>
+                            <span>Follow us on Instagram</span>
+                        </a>
+                        <a href="https://chat.whatsapp.com/I0ypTL8AhaJKaybH0d3RGi?mode=gi_t" target="_blank" rel="noopener" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:shadow-lg transition inline-flex items-center gap-3">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Join our WhatsApp Group</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Features/Stats Section -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                        <div class="feature-icon gradient-primary text-white mb-4">
+                            <i class="fas fa-business-time"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-poppins text-gray-800 mb-2">4+ Years in Business</h3>
+                        <p class="text-gray-600">Years of trusted experience serving clients across Canada with professionalism and expertise.</p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                        <div class="feature-icon gradient-primary text-white mb-4">
+                            <i class="fas fa-file-certificate"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-poppins text-gray-800 mb-2">E-File Certified by CRA</h3>
+                        <p class="text-gray-600">Officially certified by the Canada Revenue Agency for secure electronic tax filing.</p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                        <div class="feature-icon gradient-primary text-white mb-4">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-poppins text-gray-800 mb-2">6000+ Tax Returns Prepared</h3>
+                        <p class="text-gray-600">Extensive experience preparing both personal and corporate tax returns with precision.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                    <!-- Feature 4 -->
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                        <div class="feature-icon gradient-primary text-white mb-4">
+                            <i class="fas fa-laptop-house"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-poppins text-gray-800 mb-2">Get Everything Done Online</h3>
+                        <p class="text-gray-600">Convenient virtual services from the comfort of your home or office.</p>
+                    </div>
+                    
+                    <!-- Feature 5 -->
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                        <div class="feature-icon gradient-primary text-white mb-4">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-poppins text-gray-800 mb-2">Services All Across Canada</h3>
+                        <p class="text-gray-600">Providing expert tax and financial services to clients nationwide.</p>
+                    </div>
+                    
+                    <!-- Feature 6 -->
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                        <div class="feature-icon gradient-primary text-white mb-4">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-poppins text-gray-800 mb-2">Personal & Corporate Taxes</h3>
+                        <p class="text-gray-600">Comprehensive tax solutions for individuals, businesses, and corporations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 bg-accent">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-800 mb-4">Our Tax Services</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Professional tax preparation and advisory services designed to maximize your returns and minimize stress.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="service-card bg-white rounded-xl shadow-soft p-6 border-t-4 border-primary">
+                        <div class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-user text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-poppins text-gray-800 mb-4">Personal Income Tax</h3>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Individual tax return preparation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Tax planning and optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>CRA disputes and reassessments</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>RRSP and TFSA guidance</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-semibold hover:text-primaryDark transition">Learn More →</a>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="service-card bg-white rounded-xl shadow-soft p-6 border-t-4 border-primary">
+                        <div class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-building text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-poppins text-gray-800 mb-4">Corporate Tax Services</h3>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Corporate tax return preparation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Business incorporation guidance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>GST/HST filings and remittances</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Payroll and T4/T5 preparation</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-semibold hover:text-primaryDark transition">Learn More →</a>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="service-card bg-white rounded-xl shadow-soft p-6 border-t-4 border-primary">
+                        <div class="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-poppins text-gray-800 mb-4">Tax Advisory & Planning</h3>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Tax minimization strategies</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Estate and succession planning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Investment tax implications</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Audit support and representation</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="text-primary font-semibold hover:text-primaryDark transition">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                        <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-800 mb-6">Why Choose Count On Us Consultants?</h2>
+                        <p class="text-gray-600 mb-6">With over 4 years of experience and 6000+ tax returns prepared, we've built a reputation for accuracy, reliability, and exceptional client service. Our team of CRA-certified professionals stays current with the latest tax laws to ensure you receive every deduction and credit you're entitled to.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-primaryLight flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-shield-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">CRA Certified & Trusted</h4>
+                                    <p class="text-gray-600">Officially certified by Canada Revenue Agency for secure E-Filing services.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-primaryLight flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-lock text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Secure & Confidential</h4>
+                                    <p class="text-gray-600">Your financial information is protected with bank-level security protocols.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-primaryLight flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-headset text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Dedicated Support</h4>
+                                    <p class="text-gray-600">We provide ongoing support and are available to answer your questions year-round.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="relative">
+                            <img 
+                                src="https://static.vecteezy.com/system/resources/thumbnails/008/570/363/small/two-business-woman-investment-consultant-analyzing-company-annual-financial-report-balance-sheet-statement-working-with-documents-graphs-market-office-money-and-tax-concept-free-photo.jpg" 
+                                alt="Professional tax consultant" 
+                                class="w-full rounded-xl shadow-lg"
+                                loading="lazy"
+                            />
+                            <div class="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-xl shadow-lg max-w-xs">
+                                <div class="text-4xl font-bold font-poppins">6000+</div>
+                                <div class="text-lg">Tax Returns Successfully Prepared</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+     
+        <!-- Newsletter Subscription -->
+        <section class="py-16 gradient-dark text-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold font-poppins mb-4">Subscribe to Our Financial Newsletter</h2>
+                    <p class="text-xl mb-8 opacity-90">Get weekly insights on tax tips.</p>
+                    
+                    <form id="newsletterForm" class="max-w-2xl mx-auto">
+                        {% csrf_token %}
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input 
+                                type="email" 
+                                id="newsletterEmail" 
+                                placeholder="Enter your email address" 
+                                required 
+                                class="flex-grow px-6 py-4 rounded-full text-gray-800 newsletter-input"
+                            >
+                            <button 
+                                type="submit" 
+                                class="bg-white text-primary hover:bg-gray-100 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition"
+                            >
+                                Subscribe Now
+                            </button>
+                        </div>
+                        <div class="mt-4 text-sm opacity-80">
+                            <label class="flex items-center justify-center">
+                                <input type="checkbox" id="newsletterConsent" required class="mr-2">
+                                <span>I agree to receive the Count On Us Consultants newsletter with tax insights.</span>
+                            </label>
+                        </div>
+                        <div id="newsletterMessage" class="mt-4 hidden p-4 rounded-lg"></div>
+                    </form>
+                    
+                    <div class="mt-12 flex justify-center">
+    <div class="text-center p-6 max-w-sm">
+        <div class="text-3xl font-bold font-poppins mb-2">
+            Weekly
+        </div>
+        <div class="text-lg">
+            Tax Tips & Updates
+        </div>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-800 mb-4">Contact Us Today</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Get in touch for a free consultation about your tax, investment or insurance needs.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+<div class="bg-gradient-to-br from-pink-50 to-white rounded-xl shadow-soft p-8 mb-8">
+    <h3 class="text-2xl font-bold font-poppins text-gray-800 mb-6">Send Us a Message</h3>
+    
+    <form id="contactForm" method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <label for="firstName" class="block text-gray-700 font-medium mb-2">First Name *</label>
+                <input type="text" name="firstName" id="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition">
+            </div>
+            
+            <div>
+                <label for="lastName" class="block text-gray-700 font-medium mb-2">Last Name *</label>
+                <input type="text" name="lastName" id="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition">
+            </div>
+        </div>
+        
+        <div class="mb-6">
+            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+            <input type="email" name="email" id="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition">
+        </div>
+        
+        <div class="mb-6">
+            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+            <input type="tel" name="phone" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition">
+        </div>
+        
+        <div class="mb-6">
+            <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In *</label>
+            <select name="service" id="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition">
+                <option value="">Select a service</option>
+                <option value="personal-tax">Personal Income Tax</option>
+                <option value="corporate-tax">Corporate Tax Services</option>
+                <option value="other">Other Inquiry</option>
+            </select>
+        </div>
+        
+        <div class="mb-6">
+            <label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
+            <textarea name="message" id="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition"></textarea>
+        </div>
+        
+        <button type="submit" class="w-full gradient-primary hover:bg-primaryDark text-white font-bold py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition">
+            Send Message
+        </button>
+    </form>
+    
+    <div id="contactMessage" class="hidden mt-6"></div>
+</div>
+
+                    <!-- Contact Info -->
+                    <div>
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold font-poppins text-gray-800 mb-6">Contact Information</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-primaryLight flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                                        <a href="mailto:cou.consulting@gmail.com" class="text-primary hover:text-primaryDark transition">cou.consulting@gmail.com</a>
+                                        <p class="text-gray-600 text-sm mt-1">We typically respond within 24 hours</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-primaryLight flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Phone</h4>
+                                        <a href="tel:5197291249" class="text-primary hover:text-primaryDark transition">(519) 729-1249</a>
+                                        <p class="text-gray-600 text-sm mt-1">Monday-Friday, 9am-5pm EST</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-primaryLight flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Service Area</h4>
+                                        <p class="text-gray-700">Serving clients across Canada</p>
+                                        <p class="text-gray-600 text-sm mt-1">Virtual consultations available nationwide</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-primaryLight flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-clock text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Business Hours</h4>
+                                        <p class="text-gray-700">Monday - Sunday: 12:00 PM - 10:00 PM EST</p>
+                                        <p class="text-gray-600 text-sm mt-1">Extended hours during tax season</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 justify-items-center">
+            
+            <!-- Company Info -->
+            <div class="flex flex-col items-center">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="w-10 h-10 gradient-primary rounded-full flex items-center justify-center">
+                        <i class="fas fa-calculator text-white"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-xl font-bold font-poppins">Count On Us Consultants</h3>
+                        <p class="text-sm text-gray-300">Tax Advisory</p>
+                    </div>
+                </div>
+
+                <p class="text-gray-300 mb-6 text-lg max-w-sm">
+                    Professional tax preparation and serving clients across Canada since 2022.
+                </p>
+
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.instagram.com/cou_consulting"
+                       target="_blank"
+                       class="w-12 h-12 rounded-full bg-gray-800 hover:bg-pink-600 
+                              flex items-center justify-center transition duration-300">
+                        <i class="fab fa-instagram text-white text-xl"></i>
+                    </a>
+
+                    <a href="https://chat.whatsapp.com/I0ypTL8AhaJKaybH0d3RGi"
+                       target="_blank"
+                       class="w-12 h-12 rounded-full bg-gray-800 hover:bg-green-500 
+                              flex items-center justify-center transition duration-300">
+                        <i class="fab fa-whatsapp text-white text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-lg font-bold font-poppins mb-6">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#home" class="text-gray-300 hover:text-white transition">Home</a></li>
+                    <li><a href="#services" class="text-gray-300 hover:text-white transition">Tax Services</a></li>
+                    <li><a href="#contact" class="text-gray-300 hover:text-white transition">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="text-lg font-bold font-poppins mb-6">Our Services</h4>
+                <ul class="space-y-3">
+                    <li><a href="#services" class="text-gray-300 hover:text-white transition">Personal Tax Preparation</a></li>
+                    <li><a href="#services" class="text-gray-300 hover:text-white transition">Corporate Tax Services</a></li>
+                    <li><a href="#services" class="text-gray-300 hover:text-white transition">Tax Planning & Advisory</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter & Contact -->
+            <div>
+                <h4 class="text-lg font-bold font-poppins mb-6">Stay Updated</h4>
+                <p class="text-gray-300 mb-4 max-w-sm mx-auto">
+                    Subscribe to our newsletter for tax tips and financial insights.
+                </p>
+
+                <a href="#newsletterForm"
+                   class="inline-block bg-primary hover:bg-primaryDark text-white font-medium px-6 py-3 rounded-lg transition">
+                    Subscribe Now
+                </a>
+
+                <div class="mt-8 pt-8 border-t border-gray-700">
+                    <h5 class="font-bold mb-2">Contact Info</h5>
+                    <p class="text-gray-300"><i class="fas fa-envelope mr-2"></i> cou.consulting@gmail.com</p>
+                    <p class="text-gray-300 mt-2"><i class="fas fa-phone mr-2"></i> (519) 729-1249</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="border-t border-gray-800 mt-12 pt-8 text-gray-400">
+            <p>&copy; 2026 Count On Us Consultants. All rights reserved. CRA E-File Certified.</p>
+        </div>
+
+    </div>
+</footer>
+
+    
+    <!-- JavaScript -->
+    <script>
+        // Define data at the beginning
+        const services = [
+            { "id": 1, "name": "Personal Tax", "description": "Individual tax preparation and planning" },
+            { "id": 2, "name": "Corporate Tax", "description": "Business tax services and incorporation" },
+            { "id": 3, "name": "Investing", "description": "Investment advisory and wealth management" },
+            { "id": 4, "name": "Insurance", "description": "Comprehensive insurance solutions" }
+        ];
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(window.innerWidth < 768) {
+                        document.querySelector('.mobile-menu').classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Newsletter Form Submission
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('newsletterEmail').value;
+            const consent = document.getElementById('newsletterConsent').checked;
+            const messageDiv = document.getElementById('newsletterMessage');
+            const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+            if(!consent) {
+                messageDiv.innerHTML = '<div class="bg-red-100 text-red-700 p-4 rounded-lg">Please agree to receive our newsletter.</div>';
+                messageDiv.classList.remove('hidden');
+                return;
+            }
+
+            // Submit form data to Django backend
+            const formData = new FormData();
+            formData.append('subscribe_email', email);
+
+            fetch(window.location.origin + '/subscribe/', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrftoken,
+                },
+                body: formData
+            })
+            .then(response => {
+                messageDiv.innerHTML = '<div class="bg-green-100 text-green-700 p-4 rounded-lg">Thank you for subscribing to our newsletter! You will receive our next edition soon.</div>';
+                messageDiv.classList.remove('hidden');
+
+                // Reset form
+                document.getElementById('newsletterForm').reset();
+
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.classList.add('hidden');
+                }, 5000);
+            })
+            .catch(error => {
+                messageDiv.innerHTML = '<div class="bg-red-100 text-red-700 p-4 rounded-lg">Error subscribing. Please try again.</div>';
+                messageDiv.classList.remove('hidden');
+                console.error('Error:', error);
+            });
+        });
+        
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+            const messageDiv = document.getElementById('contactMessage');
+
+            // Submit form data to Django backend
+            const formData = new FormData();
+            formData.append('firstName', firstName);
+            formData.append('lastName', lastName);
+            formData.append('email', email);
+            formData.append('phone', phone);
+            formData.append('service', service);
+            formData.append('message', message);
+
+            fetch(window.location.origin + '/', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrftoken,
+                },
+                body: formData
+            })
+            .then(response => {
+                // Show success message
+                messageDiv.innerHTML = '<div class="bg-green-100 text-green-700 p-4 rounded-lg">Thank you for your message! We will contact you within 24 hours.</div>';
+                messageDiv.classList.remove('hidden');
+
+                // Reset form
+                document.getElementById('contactForm').reset();
+
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.classList.add('hidden');
+                }, 5000);
+            })
+            .catch(error => {
+                messageDiv.innerHTML = '<div class="bg-red-100 text-red-700 p-4 rounded-lg">Error sending message. Please try again.</div>';
+                messageDiv.classList.remove('hidden');
+                console.error('Error:', error);
+            });
+        });
+        
+        // Service cards hover effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 20px 25px -5px rgba(156, 26, 109, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 25px -5px rgba(156, 26, 109, 0.1)';
+            });
+        });
+        
+        // Initialize animations on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .feature-icon').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Current year for footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSpan = document.querySelector('#currentYear');
+            if(yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>
