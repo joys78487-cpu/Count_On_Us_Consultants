@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+{% block title %}Tax Services | Count On Us Consultants{% endblock %}
+{% block content %}
+<main>
+    <section class="page-hero text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <p class="uppercase tracking-widest text-white font-semibold mb-4">Count on experience</p>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Tax services built around your next move.</h2>
+            <p class="text-xl text-white max-w-2xl">Practical preparation, planning, and guidance for individuals, families, and Canadian businesses.</p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <article id="personal-income-tax" class="service-card bg-white rounded-xl shadow-soft overflow-hidden border border-gray-200">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1000&q=80" alt="Person reviewing tax documents and a calculator" class="w-full h-56 object-cover" loading="lazy">
+                    <div class="p-7"><span class="text-primary font-semibold">01 / Individuals</span><h3 class="text-2xl font-bold mt-2 mb-5">Personal Income Tax</h3><ul class="space-y-3 text-gray-600 mb-7"><li><i class="fas fa-check text-primary mr-2"></i>Individual tax return preparation</li><li><i class="fas fa-check text-primary mr-2"></i>Tax planning and optimization</li><li><i class="fas fa-check text-primary mr-2"></i>CRA disputes and reassessments</li><li><i class="fas fa-check text-primary mr-2"></i>RRSP and TFSA guidance</li></ul><a href="{% url 'contact' %}" class="inline-flex items-center bg-primaryLight hover:bg-primaryDark text-white px-5 py-3 rounded-full font-semibold transition">Book a consultation <i class="fas fa-arrow-right ml-2"></i></a></div>
+                </article>
+                <article id="corporate-tax" class="service-card bg-white rounded-xl shadow-soft overflow-hidden border border-gray-200">
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80" alt="Business team discussing financial planning" class="w-full h-56 object-cover" loading="lazy">
+                    <div class="p-7"><span class="text-primary font-semibold">02 / Businesses</span><h3 class="text-2xl font-bold mt-2 mb-5">Corporate Tax Services</h3><ul class="space-y-3 text-gray-600 mb-7"><li><i class="fas fa-check text-primary mr-2"></i>Corporate tax return preparation</li><li><i class="fas fa-check text-primary mr-2"></i>Business incorporation guidance</li><li><i class="fas fa-check text-primary mr-2"></i>GST/HST filings and remittances</li><li><i class="fas fa-check text-primary mr-2"></i>Payroll and T4/T5 preparation</li></ul><a href="{% url 'contact' %}" class="inline-flex items-center bg-primaryLight hover:bg-primaryDark text-white px-5 py-3 rounded-full font-semibold transition">Book a consultation <i class="fas fa-arrow-right ml-2"></i></a></div>
+                </article>
+                <article id="tax-advisory" class="service-card bg-white rounded-xl shadow-soft overflow-hidden border border-gray-200">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80" alt="Financial advisor reviewing charts and reports" class="w-full h-56 object-cover" loading="lazy">
+                    <div class="p-7"><span class="text-primary font-semibold">03 / Strategy</span><h3 class="text-2xl font-bold mt-2 mb-5">Tax Advisory &amp; Planning</h3><ul class="space-y-3 text-gray-600 mb-7"><li><i class="fas fa-check text-primary mr-2"></i>Tax minimization strategies</li><li><i class="fas fa-check text-primary mr-2"></i>Estate and succession planning</li><li><i class="fas fa-check text-primary mr-2"></i>Investment tax implications</li><li><i class="fas fa-check text-primary mr-2"></i>Audit support and representation</li></ul><a href="{% url 'contact' %}" class="inline-flex items-center bg-primaryLight hover:bg-primaryDark text-white px-5 py-3 rounded-full font-semibold transition">Book a consultation <i class="fas fa-arrow-right ml-2"></i></a></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="gradient-light py-16"><div class="container mx-auto px-4 max-w-4xl text-center"><h2 class="text-3xl md:text-4xl font-bold mb-4">Clear advice. Confident decisions.</h2><p class="text-lg text-gray-600 mb-8">We make complex tax decisions easier to understand, with support that stays personal from first conversation to final filing.</p><a href="{% url 'contact' %}" class="inline-flex items-center bg-primaryLight hover:bg-primaryDark text-white px-7 py-3 rounded-full font-semibold transition">Talk to our team <i class="fas fa-arrow-right ml-2"></i></a></div></section>
+</main>
+{% endblock %}

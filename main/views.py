@@ -41,6 +41,18 @@ def index(request):
     return render(request, 'main/index.html')
 
 
+def services(request):
+    return render(request, 'main/services.html')
+
+
+def about(request):
+    return render(request, 'main/about.html')
+
+
+def contact(request):
+    return render(request, 'main/contact.html')
+
+
 def subscribe(request):
     if request.method == "POST" and 'subscribe_email' in request.POST:
         email = request.POST.get('subscribe_email')

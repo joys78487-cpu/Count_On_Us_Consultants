@@ -17,13 +17,13 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#9C1A6D", // Magenta
-                        primaryLight: "#B3247D",
-                        primaryDark: "#7A1457",
-                        secondary: "#2D3748",
-                        accent: "#F7FAFC",
-                        success: "#38A169",
-                        dark: "#1A202C"
+                        primary: "#000000",
+                        primaryLight: "#800080",
+                        primaryDark: "#000000",
+                        secondary: "#FFFFFF",
+                        accent: "#800080",
+                        success: "#800080",
+                        dark: "#000000"
                     },
                     fontFamily: {
                         'poppins': ['Poppins', 'sans-serif'],
@@ -35,8 +35,8 @@
                     },
 
                     boxShadow: {
-                        'soft': '0 10px 25px -5px rgba(156, 26, 109, 0.1)',
-                        'hard': '0 20px 25px -5px rgba(156, 26, 109, 0.2)'
+                        'soft': '0 10px 25px -5px rgba(0, 0, 0, 0.12)',
+                        'hard': '0 20px 25px -5px rgba(128, 0, 128, 0.2)'
                     }
                 }
             }
@@ -49,15 +49,15 @@
         
         
         .gradient-primary {
-            background: linear-gradient(135deg, #9C1A6D 0%, #B3247D 100%);
+            background: #800080;
         }
         
         .gradient-light {
-            background: linear-gradient(135deg, #FCE4EC 0%, #F8F9FA 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #F3F4F6 100%);
         }
         
         .gradient-dark {
-            background: linear-gradient(135deg, #7A1457 0%, #1A202C 100%);
+            background: #000000;
         }
         
         .feature-icon {
@@ -77,13 +77,13 @@
         }
         
         input:focus, textarea:focus {
-            border-color: #9C1A6D;
-            box-shadow: 0 0 0 3px rgba(156, 26, 109, 0.2);
+            border-color: #800080;
+            box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.2);
         }
         
         .newsletter-input:focus {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(156, 26, 109, 0.2);
+            box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.2);
         }
 
 
@@ -196,16 +196,14 @@ nav ul {
 
     </style>
 </head>
-<body class="font-roboto bg-gray-50 text-gray-800">
+<body class="font-roboto bg-white text-black">
     <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 shadow-md bg-white">
         <div class="container mx-auto px-4 py-3">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <!-- Logo and Company Name -->
                 <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                    <div class="w-12 h-12 gradient-primary rounded-full flex items-center justify-center">
-                        <i class="fas fa-calculator text-white text-xl"></i>
-                    </div>
+                    <img src="{% static 'main/logo.svg' %}" alt="Count On Us Consultants" class="w-12 h-12 rounded-full">
                     <div>
                         <h1 class="text-2xl font-bold font-poppins text-primary">Count On Us Consultants</h1>
                         <p class="text-sm text-gray-600">Tax Services</p>
@@ -229,14 +227,14 @@ nav ul {
             <nav class="mt-4">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <ul class="flex flex-wrap justify-center space-x-0 md:space-x-8 space-y-2 md:space-y-0">
-                        <li><a href="#home" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-pink-50 transition">Home</a></li>
-                        <li><a href="#services" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-pink-50 transition">Services</a></li>
-                        <li><a href="#about" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-pink-50 transition">About Us</a></li>
-                        <li><a href="#contact" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-pink-50 transition">Contact</a></li>
+                        <li><a href="#home" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-gray-100 transition">Home</a></li>
+                        <li><a href="{% url 'services' %}" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-gray-100 transition">Services</a></li>
+                        <li><a href="{% url 'about' %}" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-gray-100 transition">About Us</a></li>
+                        <li><a href="{% url 'contact' %}" class="nav-link px-3 py-2 rounded-md font-medium text-gray-700 hover:text-primary hover:bg-gray-100 transition">Contact</a></li>
                     </ul>
                     
                     <div class="mt-4 md:mt-0">
-                        <a href="#contact" class="bg-primary hover:bg-primaryDark text-white px-6 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition">Free Consultation</a>
+                        <a href="{% url 'contact' %}" class="bg-primaryLight hover:bg-primaryDark text-white px-6 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition">Free Consultation</a>
                     </div>
                 </div>
             </nav>
@@ -245,7 +243,7 @@ nav ul {
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="gradient-primary text-white py-16 md:py-24">
+        <section id="home" class="bg-black text-white py-16 md:py-24">
             <div class="container mx-auto px-4">
                 <div class="flex flex-col lg:flex-row items-center">
                     <div class="lg:w-1/2 mb-12 lg:mb-0">
@@ -254,7 +252,7 @@ nav ul {
                         
                         <div class="flex flex-wrap gap-4">
                             <a href="#contact" class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition">Get Started</a>
-                            <a href="#services" class="border-2 border-white hover:bg-white hover:text-primary px-8 py-3 rounded-full font-bold text-lg transition">Our Services</a>
+                            <a href="{% url 'services' %}" class="border-2 border-white hover:bg-white hover:text-primary px-8 py-3 rounded-full font-bold text-lg transition">Our Services</a>
                         </div>
                     </div>
                     
@@ -273,17 +271,17 @@ nav ul {
         </section>
 
         <!-- Social Promo: Instagram & WhatsApp Group -->
-        <section class="py-12 bg-pink-50">
+        <section class="py-12 bg-gray-100">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center">
                     <h3 class="text-2xl font-bold font-poppins text-gray-800 mb-4">Connect with us on Instagram & WhatsApp</h3>
-                    <p class="text-gray-600 mb-6">Follow our Instagram for tips, client stories and updates — and join our small WhatsApp group for quick announcements and community support.</p>
+                    <p class="text-gray-600 mb-6">Follow our Instagram for tips, client stories and updates - and join our small WhatsApp group for quick announcements and community support.</p>
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a href="https://www.instagram.com/cou_consulting?igsh=eHBwenNnZjVhb2R3&utm_source=qr" target="_blank" rel="noopener" class="bg-white text-primary px-6 py-3 rounded-full font-semibold shadow-md hover:shadow-lg transition inline-flex items-center gap-3">
                             <i class="fab fa-instagram"></i>
                             <span>Follow us on Instagram</span>
                         </a>
-                        <a href="https://chat.whatsapp.com/I0ypTL8AhaJKaybH0d3RGi?mode=gi_t" target="_blank" rel="noopener" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:shadow-lg transition inline-flex items-center gap-3">
+                        <a href="https://chat.whatsapp.com/I0ypTL8AhaJKaybH0d3RGi?mode=gi_t" target="_blank" rel="noopener" class="bg-primaryLight hover:bg-primaryDark text-white px-6 py-3 rounded-full font-semibold shadow-md hover:shadow-lg transition inline-flex items-center gap-3">
                             <i class="fab fa-whatsapp"></i>
                             <span>Join our WhatsApp Group</span>
                         </a>
@@ -296,7 +294,7 @@ nav ul {
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Feature 1 -->
-                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-gray-100 to-white shadow-soft">
                         <div class="feature-icon gradient-primary text-white mb-4">
                             <i class="fas fa-business-time"></i>
                         </div>
@@ -305,7 +303,7 @@ nav ul {
                     </div>
                     
                     <!-- Feature 2 -->
-                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-gray-100 to-white shadow-soft">
                         <div class="feature-icon gradient-primary text-white mb-4">
                             <i class="fas fa-file-certificate"></i>
                         </div>
@@ -314,7 +312,7 @@ nav ul {
                     </div>
                     
                     <!-- Feature 3 -->
-                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-gray-100 to-white shadow-soft">
                         <div class="feature-icon gradient-primary text-white mb-4">
                             <i class="fas fa-file-invoice-dollar"></i>
                         </div>
@@ -325,7 +323,7 @@ nav ul {
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
                     <!-- Feature 4 -->
-                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-gray-100 to-white shadow-soft">
                         <div class="feature-icon gradient-primary text-white mb-4">
                             <i class="fas fa-laptop-house"></i>
                         </div>
@@ -334,7 +332,7 @@ nav ul {
                     </div>
                     
                     <!-- Feature 5 -->
-                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-gray-100 to-white shadow-soft">
                         <div class="feature-icon gradient-primary text-white mb-4">
                             <i class="fas fa-map-marked-alt"></i>
                         </div>
@@ -343,7 +341,7 @@ nav ul {
                     </div>
                     
                     <!-- Feature 6 -->
-                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-pink-50 to-white shadow-soft">
+                    <div class="text-center p-6 rounded-xl bg-gradient-to-br from-gray-100 to-white shadow-soft">
                         <div class="feature-icon gradient-primary text-white mb-4">
                             <i class="fas fa-balance-scale"></i>
                         </div>
@@ -387,7 +385,7 @@ nav ul {
                                 <span>RRSP and TFSA guidance</span>
                             </li>
                         </ul>
-                        <a href="#contact" class="text-primary font-semibold hover:text-primaryDark transition">Learn More →</a>
+                        <a href="{% url 'services' %}#personal-income-tax" class="text-primary font-semibold hover:text-primaryDark transition">Learn More -&gt;</a>
                     </div>
                     
                     <!-- Service 2 -->
@@ -414,7 +412,7 @@ nav ul {
                                 <span>Payroll and T4/T5 preparation</span>
                             </li>
                         </ul>
-                        <a href="#contact" class="text-primary font-semibold hover:text-primaryDark transition">Learn More →</a>
+                        <a href="{% url 'services' %}#corporate-tax" class="text-primary font-semibold hover:text-primaryDark transition">Learn More -&gt;</a>
                     </div>
                     
                     <!-- Service 3 -->
@@ -441,7 +439,7 @@ nav ul {
                                 <span>Audit support and representation</span>
                             </li>
                         </ul>
-                        <a href="#contact" class="text-primary font-semibold hover:text-primaryDark transition">Learn More →</a>
+                        <a href="{% url 'services' %}#tax-advisory" class="text-primary font-semibold hover:text-primaryDark transition">Learn More -&gt;</a>
                     </div>
                 </div>
             </div>
@@ -564,7 +562,7 @@ nav ul {
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <!-- Contact Form -->
-<div class="bg-gradient-to-br from-pink-50 to-white rounded-xl shadow-soft p-8 mb-8">
+<div class="bg-gradient-to-br from-gray-100 to-white rounded-xl shadow-soft p-8 mb-8">
     <h3 class="text-2xl font-bold font-poppins text-gray-800 mb-6">Send Us a Message</h3>
     
     <form id="contactForm" method="POST" action="{% url 'home' %}">
@@ -680,9 +678,7 @@ nav ul {
             <!-- Company Info -->
             <div class="flex flex-col items-center">
                 <div class="flex items-center space-x-3 mb-6">
-                    <div class="w-10 h-10 gradient-primary rounded-full flex items-center justify-center">
-                        <i class="fas fa-calculator text-white"></i>
-                    </div>
+                    <img src="{% static 'main/logo.svg' %}" alt="Count On Us Consultants" class="w-10 h-10 rounded-full">
                     <div class="text-left">
                         <h3 class="text-xl font-bold font-poppins">Count On Us Consultants</h3>
                         <p class="text-sm text-gray-300">Tax Advisory</p>
@@ -696,14 +692,14 @@ nav ul {
                 <div class="flex justify-center space-x-6">
                     <a href="https://www.instagram.com/cou_consulting"
                        target="_blank"
-                       class="w-12 h-12 rounded-full bg-gray-800 hover:bg-pink-600 
+                       class="w-12 h-12 rounded-full bg-gray-800 hover:bg-primaryLight
                               flex items-center justify-center transition duration-300">
                         <i class="fab fa-instagram text-white text-xl"></i>
                     </a>
 
                     <a href="https://chat.whatsapp.com/I0ypTL8AhaJKaybH0d3RGi"
                        target="_blank"
-                       class="w-12 h-12 rounded-full bg-gray-800 hover:bg-green-500 
+                       class="w-12 h-12 rounded-full bg-gray-800 hover:bg-primaryLight
                               flex items-center justify-center transition duration-300">
                         <i class="fab fa-whatsapp text-white text-xl"></i>
                     </a>
@@ -714,9 +710,10 @@ nav ul {
             <div>
                 <h4 class="text-lg font-bold font-poppins mb-6">Quick Links</h4>
                 <ul class="space-y-3">
-                    <li><a href="#home" class="text-gray-300 hover:text-white transition">Home</a></li>
-                    <li><a href="#services" class="text-gray-300 hover:text-white transition">Tax Services</a></li>
-                    <li><a href="#contact" class="text-gray-300 hover:text-white transition">Contact Us</a></li>
+                    <li><a href="{% url 'home' %}" class="text-gray-300 hover:text-white transition">Home</a></li>
+                    <li><a href="{% url 'services' %}" class="text-gray-300 hover:text-white transition">Tax Services</a></li>
+                    <li><a href="{% url 'about' %}" class="text-gray-300 hover:text-white transition">About Us</a></li>
+                    <li><a href="{% url 'contact' %}" class="text-gray-300 hover:text-white transition">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -724,9 +721,9 @@ nav ul {
             <div>
                 <h4 class="text-lg font-bold font-poppins mb-6">Our Services</h4>
                 <ul class="space-y-3">
-                    <li><a href="#services" class="text-gray-300 hover:text-white transition">Personal Tax Preparation</a></li>
-                    <li><a href="#services" class="text-gray-300 hover:text-white transition">Corporate Tax Services</a></li>
-                    <li><a href="#services" class="text-gray-300 hover:text-white transition">Tax Planning & Advisory</a></li>
+                    <li><a href="{% url 'services' %}#personal-income-tax" class="text-gray-300 hover:text-white transition">Personal Tax Preparation</a></li>
+                    <li><a href="{% url 'services' %}#corporate-tax" class="text-gray-300 hover:text-white transition">Corporate Tax Services</a></li>
+                    <li><a href="{% url 'services' %}#tax-advisory" class="text-gray-300 hover:text-white transition">Tax Planning &amp; Advisory</a></li>
                 </ul>
             </div>
 
@@ -738,7 +735,7 @@ nav ul {
                 </p>
 
                 <a href="#newsletterForm"
-                   class="inline-block bg-primary hover:bg-primaryDark text-white font-medium px-6 py-3 rounded-lg transition">
+                   class="inline-block bg-primaryLight hover:bg-primaryDark text-white font-medium px-6 py-3 rounded-lg transition">
                     Subscribe Now
                 </a>
 
@@ -819,7 +816,7 @@ nav ul {
                 body: formData
             })
             .then(response => {
-                messageDiv.innerHTML = '<div class="bg-green-100 text-green-700 p-4 rounded-lg">Thank you for subscribing to our newsletter! You will receive our next edition soon.</div>';
+                messageDiv.innerHTML = '<div class="bg-gray-100 text-black p-4 rounded-lg">Thank you for subscribing to our newsletter! You will receive our next edition soon.</div>';
                 messageDiv.classList.remove('hidden');
 
                 // Reset form
@@ -870,7 +867,7 @@ nav ul {
             })
             .then(response => {
                 // Show success message
-                messageDiv.innerHTML = '<div class="bg-green-100 text-green-700 p-4 rounded-lg">Thank you for your message! We will contact you within 24 hours.</div>';
+                messageDiv.innerHTML = '<div class="bg-gray-100 text-black p-4 rounded-lg">Thank you for your message! We will contact you within 24 hours.</div>';
                 messageDiv.classList.remove('hidden');
 
                 // Reset form
@@ -892,12 +889,12 @@ nav ul {
         document.querySelectorAll('.service-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-10px)';
-                this.style.boxShadow = '0 20px 25px -5px rgba(156, 26, 109, 0.15)';
+                this.style.boxShadow = '0 20px 25px -5px rgba(128, 0, 128, 0.15)';
             });
             
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 10px 25px -5px rgba(156, 26, 109, 0.1)';
+                this.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.12)';
             });
         });
         

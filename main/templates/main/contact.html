@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+{% block title %}Contact Us | Count On Us Consultants{% endblock %}
+{% block content %}
+<main>
+    <section class="page-hero text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <p class="uppercase tracking-widest text-white font-semibold mb-4">Let's talk</p>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Take the next step with confidence.</h2>
+            <p class="text-xl text-white max-w-2xl">Tell us what you need help with and our team will get back to you within 24 hours.</p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="bg-gradient-to-br from-gray-100 to-white rounded-xl shadow-soft p-8">
+                    <span class="text-primary font-semibold">Start a conversation</span>
+                    <h2 class="text-2xl md:text-3xl font-bold mt-2 mb-6">Tell us how we can help.</h2>
+                    <form method="POST" action="{% url 'home' %}">
+                        {% csrf_token %}
+                        <div class="grid md:grid-cols-2 gap-5 mb-5">
+                            <div><label for="firstName" class="block font-medium mb-2">First Name *</label><input type="text" name="firstName" id="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"></div>
+                            <div><label for="lastName" class="block font-medium mb-2">Last Name *</label><input type="text" name="lastName" id="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"></div>
+                        </div>
+                        <div class="mb-5"><label for="email" class="block font-medium mb-2">Email Address *</label><input type="email" name="email" id="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"></div>
+                        <div class="mb-5"><label for="phone" class="block font-medium mb-2">Phone Number</label><input type="tel" name="phone" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"></div>
+                        <div class="mb-5"><label for="service" class="block font-medium mb-2">Service Interested In *</label><select name="service" id="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"><option value="">Select a service</option><option value="personal-tax">Personal Income Tax</option><option value="corporate-tax">Corporate Tax Services</option><option value="other">Other Inquiry</option></select></div>
+                        <div class="mb-6"><label for="message" class="block font-medium mb-2">Message *</label><textarea name="message" id="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"></textarea></div>
+                        <button type="submit" class="w-full gradient-primary text-white font-bold py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition">Send Message</button>
+                    </form>
+                </div>
+
+                <div>
+                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=80" alt="Professional consultation" class="w-full rounded-xl shadow-lg mb-8" loading="lazy">
+                    <span class="text-primary font-semibold">Contact information</span>
+                    <h2 class="text-3xl font-bold mt-2 mb-6">We're here when you need us.</h2>
+                    <div class="space-y-5">
+                        <div class="flex items-start"><i class="fas fa-envelope text-primary text-xl mt-1 mr-4"></i><div><h3 class="font-bold">Email</h3><a href="mailto:cou.consulting@gmail.com" class="text-primary">cou.consulting@gmail.com</a><p class="text-gray-600 text-sm mt-1">We typically respond within 24 hours.</p></div></div>
+                        <div class="flex items-start"><i class="fas fa-phone text-primary text-xl mt-1 mr-4"></i><div><h3 class="font-bold">Phone</h3><a href="tel:5197291249" class="text-primary">(519) 729-1249</a><p class="text-gray-600 text-sm mt-1">Monday-Friday, 9am-5pm EST.</p></div></div>
+                        <div class="flex items-start"><i class="fas fa-map-marker-alt text-primary text-xl mt-1 mr-4"></i><div><h3 class="font-bold">Service area</h3><p class="text-gray-600">Serving clients across Canada with virtual consultations nationwide.</p></div></div>
+                        <div class="flex items-start"><i class="fas fa-clock text-primary text-xl mt-1 mr-4"></i><div><h3 class="font-bold">Business hours</h3><p class="text-gray-600">Monday - Sunday: 12:00 PM - 10:00 PM EST.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gradient-light py-16">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Prefer to start online?</h2>
+            <p class="text-lg text-gray-600 mb-8">Explore our services first, then come back when you're ready to discuss your situation.</p>
+            <a href="{% url 'services' %}" class="inline-flex items-center bg-primaryLight hover:bg-primaryDark text-white px-7 py-3 rounded-full font-semibold transition">Explore our services <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+    </section>
+</main>
+{% endblock %}
